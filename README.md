@@ -1,4 +1,3 @@
-
 # array-to-csv
 
 [![NPM version][npm-image]][npm-url]
@@ -7,7 +6,7 @@
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Dependency Status][david-image]][david-url]
 [![License][license-image]][license-url]
-[![Downloads][downloads-image]][downloads-url
+[![Downloads][downloads-image]][downloads-url]
 
 Convert a 2D array to CSV.
 
