@@ -10,6 +10,6 @@ function joinRow(row) {
 
 function escapeCell(x) {
   return /,|"/.test(x)
-    ? `"${x}"`
+    ? '"' + x + '"'
     : x
 }
