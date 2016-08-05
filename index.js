@@ -1,15 +1,16 @@
 'use strict'
 
-module.exports = function (array) {
-  return array.map(joinRow).join('\n')
+module.exports = function (array, separator) {
+  separator=separator || ",";
+  return array.map(joinRow, separator).join('\n');
 }
 
 function joinRow(row) {
-  return row.map(escapeCell).join(',')
+  return row.map(escapeCell,this).join(this);
 }
 
-function escapeCell(x) {
-  return /,|"/.test(x)
-    ? '"' + x + '"'
-    : x
+function escapeCell(cell) {
+  return (cell.indexOf(this) != -1 || cell.indexOf("\"") != -1)?
+    '"' + cell.replace(/\"/g,"\"\"") + '"'
+    : cell;
 }

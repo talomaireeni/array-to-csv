@@ -5,7 +5,7 @@ const assert = require('assert')
 const toCsv = require('..')
 
 it('should escape "s', function () {
-  assert.equal(toCsv([['asdf"']]), '"asdf""')
+  assert.equal(toCsv([['asd"f']]), '"asd""f"')
 })
 
 it('should escape `,`s', function () {
