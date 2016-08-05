@@ -12,11 +12,24 @@ Convert a 2D array to CSV.
 ```js
 const toCSV = require('array-to-csv')
 
+//Comma-seperated values
 toCSV([
   ['header 1', 'header 2'],
   ['value 1', 'value 2']
 ])
+
+//If you prefer using tab as delimiter
+toCSV([
+  ['header 1', 'header 2'],
+  ['value 1', 'value 2']
+], "\t")
 ```
+
+## Change log
+### 1.0.2
+- fix double quote is not being escaped.
+- fix mocha test case.
+- accept other delimiter.
 
 [npm-image]: https://img.shields.io/npm/v/array-to-csv.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/array-to-csv
