@@ -26,6 +26,9 @@ toCSV([
 ```
 
 ## Change log
+### 1.0.3
+- array with number/boolean/null/undefined should work now
+
 ### 1.0.2
 - fix double quote is not being escaped.
 - fix mocha test case.

@@ -10,6 +10,8 @@ function joinRow(row) {
 }
 
 function escapeCell(cell) {
+  cell = cell || "";
+  cell = cell.toString();
   return (cell.indexOf(this) != -1 || cell.indexOf("\"") != -1)?
     '"' + cell.replace(/\"/g,"\"\"") + '"'
     : cell;
