@@ -1,10 +1,18 @@
 {
   "name": "array-to-csv",
-  "description": "Convert an array to a CSV",
-  "version": "1.0.1",
+  "description": "Convert an array to comma-separated values (CSV) or any delimitor-separated values",
+  "version": "1.0.3",
   "author": "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
+  "contributors": ["Brian Pow <brianpow@gmail.com>"],
   "license": "MIT",
-  "repository": "jonathanong/array-to-csv",
+  "repository": { 
+    "type": "git" , 
+    "url": "https://github.com/brianpow/array-to-csv.git"
+  },
+  "bugs":{
+    "url": "https://github.com/brianpow/array-to-csv/issues"
+  },
+  "homepage": "https://github.com/brianpow/array-to-csv",
   "dependencies": {},
   "devDependencies": {
     "babel-istanbul": "0",
@@ -20,7 +28,11 @@
   "keywords": [
     "array",
     "2d",
-    "csv"
+    "csv",
+    "tsv",
+    "comma-separated values",
+    "tab-separated values",
+    "flatten"
   ],
   "files": [
     "index.js"
