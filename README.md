@@ -26,6 +26,9 @@ toCSV([
 ```
 
 ## Change log
+### 1.0.4
+- array with cell containing function works now
+
 ### 1.0.3
 - array with number/boolean/null/undefined should work now
 
