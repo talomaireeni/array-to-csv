@@ -26,6 +26,9 @@ toCSV([
 ```
 
 ## Change log
+### 1.0.5
+- Object with array as values also works now (key will be dropped)
+
 ### 1.0.4
 - array with cell containing function works now
 
