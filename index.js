@@ -2,20 +2,21 @@
 if (!Object.values)
   require('object.values/shim')()
 
-module.exports = function (array, separator) {
+module.exports = function (array, separator, alwaysQuote) {
   separator = separator || ','
-  return (array.hasOwnProperty('length')) ? array.map(joinRow, separator).join('\n') : Object.values(array).map(joinRow, separator).join('\n')
+  alwaysQuote = (alwaysQuote === true)
+  return (Array.isArray(array)) ? array.map(joinRow, { separator: separator, alwaysQuote: alwaysQuote }).join('\n') : Object.values(array).map(joinRow, { separator: separator, alwaysQuote: alwaysQuote }).join('\n')
 }
 
 function joinRow(row) {
-  return row.map(escapeCell, this).join(this)
+  return row.map(escapeCell, { separator: this.separator, alwaysQuote: this.alwaysQuote }).join(this.separator)
 }
 
 function escapeCell(cell) {
   cell = cell || ''
   if (typeof cell === 'function') cell = cell()
   cell = cell.toString()
-  return (cell.indexOf(this) !== -1 || cell.indexOf('"') !== -1) ?
+  return (this.alwaysQuote || cell.indexOf(this.separator) !== -1 || cell.indexOf('"') !== -1 || cell.indexOf('\n') !== -1) ?
     '"' + cell.replace(/\"/g, '""') + '"' :
     cell
 }

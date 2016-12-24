@@ -35,6 +35,18 @@ it('should work for Object', function() {
     }), "a,b\nc,d,e")
 })
 
+it('should add double quote if newline exists in cell value', function() {
+    assert.equal(toCsv([
+        ['abc\ndef']
+    ]), '"abc\ndef"')
+})
+
+it('should add double quote if alwaysQuote is true', function() {
+    assert.equal(toCsv([
+        ['a']
+    ],",",true), '"a"')
+})
+
 var add = (function() {
     var val = 0
     return function() {
