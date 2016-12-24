@@ -26,6 +26,10 @@ toCSV([
 ```
 
 ## Change log
+### 1.0.6
+- fix cell with newline is not quoted
+- added alwaysQuote parameter
+
 ### 1.0.5
 - Object with array as values also works now (key will be dropped)
 
