@@ -23,9 +23,21 @@ toCSV([
   ['header 1', 'header 2'],
   ['value 1', 'value 2']
 ], "\t")
+
+
+//Join cells only
+toCSV.joinCells(['value 1', 'value 2'])
+
+
+//Escape one cell only
+toCSV.escapeCell('value 1')
 ```
 
 ## Change log
+### 1.0.7
+- rename joinRow() to joinCells()
+- expose joinRow() and escapeCell() functions
+
 ### 1.0.6
 - fix cell with newline is not quoted
 - added alwaysQuote parameter

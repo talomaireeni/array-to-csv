@@ -47,6 +47,21 @@ it('should add double quote if alwaysQuote is true', function() {
     ],",",true), '"a"')
 })
 
+it('should add double quote to the first two cells', function() {
+    assert.equal(toCsv.joinCells(['a\t','b\t','c']
+    ,"\t"), '"a\t"\t"b\t"\tc')
+})
+
+it('should add double quote to the first two cells', function() {
+    assert.equal(toCsv.joinCells(['a,','b,','c']
+    ,","), '"a,","b,",c')
+})
+
+it('should add double quote to this cell', function() {
+    assert.equal(toCsv.escapeCell('a,'
+    ,","), '"a,"')
+})
+
 var add = (function() {
     var val = 0
     return function() {
